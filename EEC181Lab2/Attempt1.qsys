@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags=""
+   categories="" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element CBReg32_0
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
+      }
+   }
+   element sys_sdram_pll_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="device" value="5CSEMA5F31C6" />
+ <parameter name="deviceFamily" value="Cyclone V" />
+ <parameter name="deviceSpeedGrade" value="6" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="0" />
+ <parameter name="timeStamp" value="0" />
+ <parameter name="useTestBenchNamingPattern" value="false" />
+ <instanceScript></instanceScript>
+ <interface
+   name="system_ref_clk"
+   internal="sys_sdram_pll_0.ref_clk"
+   type="clock"
+   dir="end" />
+ <interface
+   name="system_ref_reset"
+   internal="sys_sdram_pll_0.ref_reset"
+   type="reset"
+   dir="end" />
+ <interface
+   name="sdram_clk"
+   internal="sys_sdram_pll_0.sdram_clk"
+   type="clock"
+   dir="start" />
+ <interface
+   name="sys_clk"
+   internal="sys_sdram_pll_0.sys_clk"
+   type="clock"
+   dir="start" />
+ <module
+   kind="altera_up_avalon_sys_sdram_pll"
+   version="13.1"
+   enabled="1"
+   name="sys_sdram_pll_0">
+  <parameter name="gui_refclk" value="50.0" />
+  <parameter name="gui_outclk" value="50.0" />
+  <parameter name="CIII_boards" value="DE0" />
+  <parameter name="CIV_boards" value="DE2-115" />
+  <parameter name="CV_boards" value="DE1-SoC" />
+  <parameter name="other_boards" value="None" />
+  <parameter name="device_family" value="Cyclone V" />
+  <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
+ </module>
+ <module kind="CBReg32" version="1.0" enabled="1" name="CBReg32_0" />
+ <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
+ <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
+ <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="false" />
+</system>

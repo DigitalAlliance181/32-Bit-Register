@@ -5,6 +5,7 @@
   <columns>
    <connections preferredWidth="63" />
    <irq preferredWidth="34" />
+   <name preferredWidth="237" />
   </columns>
  </systemtable>
  <clocktable>
@@ -14,7 +15,6 @@
    <frequency preferredWidth="154" />
   </columns>
  </clocktable>
- <window width="1100" height="800" x="0" y="25" />
- <library
-   expandedCategories="Library/University Program,Library,Library/University Program/Clock,Project" />
+ <window width="1305" height="1368" x="0" y="0" />
+ <library expandedCategories="Project" />
 </preferences>

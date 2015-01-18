@@ -1,21 +1,20 @@
 //reg32.v
 //Chris Bird, Lillie Deas, Kaila Balancio
 
-module reg32 (clock, resetn, byteenable, D, Q);
+module reg32 (clock, reset, byteenable, D, Q);
 input clock;
-input resetn;
+input reset;
 input [1:0] byteenable;
 input [31:0] D; //Input data to register
 output reg [31:0] Q; //Output data from register
 
 //reg [31:0] memArray; //Actual register
 
-	always @(posedge clock or posedge resetn)
+	always @(posedge clock or posedge reset)
 	begin
-	    if(resetn) 
+	    if(reset) 
 	        Q[31:0] = 32'b0000_0000_0000_0000_0000_0000_0000_0000; 
-	    else 
-		 begin
+	    begin
 		    if(byteenable[1:0] == 2'b00)
 		    	Q[7:0] <= D[7:0];
 

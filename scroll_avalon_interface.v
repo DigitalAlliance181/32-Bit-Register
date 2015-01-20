@@ -22,7 +22,7 @@ module scroll_avalon_interface(clock, resetn, write, writedata, read, readdata, 
 
 	assign to_reg = writedata;
 	assign readdata = from_reg;
-	assign 
+	assign //how to assign the speed, speedup and speeddown??
 	assign Q = from_reg;
 
 	scroll U1 (.clock(clock), .resetn(resetn), .speed(to_reg), .speedup(to_reg),.speeddown(to_reg), .Q(from_reg));

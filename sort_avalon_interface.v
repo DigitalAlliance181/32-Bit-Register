@@ -1,9 +1,9 @@
-// sort_avalon_interface.v
+// scroll_avalon_interface.v
 
 //Chris Bird, Lillie Deas, Kaila Balancio
 //EEC 181 Lab 2
 
-module sort_avalon_interface(clock, resetn, write, writedata, read, readdata, chipselect, Q);
+module scroll_avalon_interface(clock, resetn, write, writedata, read, readdata, speed, speedup, speeddown, chipselect, Q);
 	
 	//Standard clock and reset signals
 	input clock, resetn;
@@ -18,11 +18,13 @@ module sort_avalon_interface(clock, resetn, write, writedata, read, readdata, ch
 
 	//Internal signals used in this module only
 	wire [31:0] to_reg, from_reg;
+	wire speed, speedup, speeddown;
 
 	assign to_reg = writedata;
 	assign readdata = from_reg;
+	assign //how to assing speed, speedup and speeddown??
 	assign Q = from_reg;
 
-	reg32 U1 (.clock(clock), .resetn(resetn), .D(to_reg), .Q(from_reg));
+	scroll U1 (.clock(clock), .resetn(resetn), .speed(to_reg), .speedup(to_reg),.speeddown(to_reg), .Q(from_reg));
 
 endmodule
